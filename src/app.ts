@@ -37,10 +37,7 @@ var upload = multer({ storage: storage });
 // Multer configuration
 
 
-app.post("/uploadFeeStrucDoc",upload.single('uploadFeeStrucDoc'),(req,res)=>{
-   console.log('req: ', req.body);
- 
-})
+
 
 app.use((req, res, next) => {
     res.setHeader('Content-Type', 'application/json');

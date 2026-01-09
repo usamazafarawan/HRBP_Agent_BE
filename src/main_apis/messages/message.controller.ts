@@ -1,14 +1,14 @@
 
-export const createStudentAdmissionRecord = async (req, res) => {
+export const receiveMessage = async (req, res) => {
   try {
-    console.log("📥 Received Student Admission Record:", req.body);
 
-    const { parent, students } = req.body;
+    const { message } = req.body;
 
- 
+     console.log("message =>", message);
+
 
     return res.status(201).json({
-      message: "Student record created successfully",
+      reply: "Meessage received successfully",
     });
   } catch (error) {
     console.error("❌ Error creating student record:", error);
