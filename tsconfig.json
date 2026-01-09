@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "target": "es6",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
+      "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+    },
+    "lib": ["es2015"],
+    "include": [
+      "src/**/*.ts" // This ensures TypeScript compiles everything inside the src folder
+    ],
+    "exclude": [
+      "node_modules"
+    ]  }
