@@ -1,5 +1,7 @@
 import path from "path";
 import XLSX from "xlsx";
+import OpenAI from "openai";
+// const client = new OpenAI({ apiKey: '' });
 
 export const receiveMessage = async (req, res) => {
   try {
@@ -73,8 +75,26 @@ export const receiveMessage = async (req, res) => {
       }
     }
 
+    const prompt = `
+Here is the data:
+${JSON.stringify(data, null, 2)}
+Answer this query: "${message}"
+`;
+
+  console.log('prompt: ', prompt);
+
+// const response = await client.chat.completions.create({
+//   model: "gpt-4",
+//   messages: [{ role: "user", content: prompt }],
+// });
+
+  // console.log('response: ', response);
+
+
     return res.status(201).json({
-      reply: reply,
+      // reply: response.choices[0].message.content ?? reply,
+      reply:  reply,
+
 
     });
   } catch (error) {
